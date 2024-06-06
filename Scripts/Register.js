@@ -30,7 +30,14 @@ function checkInputs() {
   if (DiaOrigemValue === "") {
     setErrorFor(DiaOrigem, "Data é um campo obrigatório");
   } else {
-    setSuccessFor(DiaOrigem);
+    if (!CheckDate(DiaOrigemValue)) {
+      setErrorFor(
+        DiaOrigem,
+        "Data inválida, por favor insira data a partir do dia atual"
+      );
+    } else {
+      setSuccessFor(DiaOrigem);
+    }
   }
   if (NomeValue === "") {
     setErrorFor(Nome, "Nome da embarcação é um campo obrigatório");
@@ -48,14 +55,20 @@ function checkInputs() {
     ".form-control.success"
   ).length;
   if (formControls === formControlSuccess) {
+    let NumericCapacidade = parseFloat(CapacidadeValue);
+    if (CapacidadeValue.length > 4 && !isNaN(CapacidadeValue)) {
+      NumericCapacidade = NumericCapacidade.toExponential(2);
+    }
+
     const item = {
       Origem: OrigemValue,
       Destino: DestinoValue,
       DiaOrigem: DiaOrigemValue,
-      Capacidade: CapacidadeValue,
+      Capacidade: NumericCapacidade,
       Nome: NomeValue,
     };
     AddItemToLocalStorage(JSON.stringify(item));
+    ClearForms();
   }
 }
 
@@ -83,4 +96,22 @@ function AddItemToLocalStorage(item) {
   console.log(itemsArray);
 
   localStorage.setItem("items", JSON.stringify(itemsArray));
+}
+
+function ClearForms() {
+  Origem.value = "";
+  Destino.value = "";
+  DiaOrigem.value = "";
+  Nome.value = "";
+  Capacidade.value = "";
+}
+
+function CheckDate(StringDate) {
+  const inputDate = new Date(StringDate);
+  const currentDate = new Date();
+
+  inputDate.setHours(0, 0, 0, 0);
+  currentDate.setHours(0, 0, 0, 0);
+
+  return inputDate >= currentDate;
 }
