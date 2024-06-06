@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Styles/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Cargo Manager: Register</title>
+  </head>
+  <body>
+    <header>
+      <div class="button-container">
+        <a class="button" href="../Index.html"><i class="fas fa-home"></i></a>
+        <a class="button" href="./search.html">Consultar Viagens</a>
+      </div>
+    </header>
+    <div class="container">
+      <div class="header">
+        <h2>Cadastre uma viagem de limpeza</h2>
+      </div>
+      <form id="form" class="form">
+        <div class="form-control">
+          <label for="Nome">Nome da embarcação</label>
+          <input
+            type="text"
+            id="Nome"
+            placeholder="Escreva o nome da embarcação para a limpeza..."
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="Origem">Origem</label>
+          <input
+            type="text"
+            id="Origem"
+            placeholder="Escreva a origem de saída da embarcação..."
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="Destino">Destino</label>
+          <input
+            type="text"
+            id="Destino"
+            placeholder="Escreva o destino de volta da embarcação..."
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="DiaOrigem">Data</label>
+          <input
+            type="date"
+            id="DiaOrigem"
+            placeholder="Digite a data de sua viagem..."
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="Capacidade">Capacidade de Carga</label>
+          <input
+            type="number"
+            id="Capacidade"
+            placeholder="Digite a capacidade da carga dos residuos em Kilogramas"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+    <footer>
+      <p>&copy; 2024 Cargo Manager. Todos os direitos reservados.</p>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/f9e19193d6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../Scripts/Register.js"></script>
+  </body>
+</html>
